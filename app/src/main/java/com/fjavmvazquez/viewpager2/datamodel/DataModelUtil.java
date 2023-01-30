@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class DataModelUtil {
    private static ArrayList<DataModelNotas> sMDataModelNotasArrayList;
+   private  static  ArrayList<DataModelHome> listaHome;
 
  public static ArrayList<DataModelNotas> llenar(){
         sMDataModelNotasArrayList = new ArrayList<>();
@@ -31,6 +32,17 @@ public class DataModelUtil {
     }
 
 
-
-
+    public static ArrayList<DataModelHome> llenarHome() {
+        listaHome = new ArrayList<>();
+        listaHome.add(new DataModelHome("Despensa del mes 1", 1000));
+        listaHome.add(new DataModelHome("Despensa del mes 2", 100));
+        listaHome.add(new DataModelHome("Despensa del mes 3", 1100));
+        listaHome.add(new DataModelHome("Despensa del mes 4", 1200));
+        listaHome.add(new DataModelHome("Despensa del mes 5", 1400));
+        listaHome.add(new DataModelHome("Despensa del mes 6", 1500));
+        listaHome.add(new DataModelHome("Despensa del mes 7", 1600));
+        listaHome.add(new DataModelHome("Despensa del mes 8", 1700));
+        listaHome.add(new DataModelHome("Despensa del mes 9", 1900));
+        return  listaHome;
+    }
 }

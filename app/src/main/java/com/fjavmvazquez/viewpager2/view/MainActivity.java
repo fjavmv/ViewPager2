@@ -8,7 +8,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
-import com.fjavmvazquez.viewpager2.fragment.MiFragment;
+import com.fjavmvazquez.viewpager2.fragment.HomeFragment;
 import com.fjavmvazquez.viewpager2.fragment.NotasFragment;
 import com.fjavmvazquez.viewpager2.fragment.NuevaNotaFragment;
 import com.fjavmvazquez.viewpager2.R;
@@ -45,13 +45,16 @@ public class MainActivity extends FragmentActivity {
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 switch (position){
                     case 0:
-                        tab.setText("Notas recientes");
+                        tab.setText("Inicio");
                         break;
                     case 1:
-                        tab.setIcon(ICON);
+                        tab.setText("Notas recientes");
                         break;
                     case 2:
-                        tab.setText("Notas");
+                        tab.setIcon(ICON);
+                        break;
+                    case 3:
+                        tab.setText("Notas pasadas");
                         break;
                     default:
                         break;
@@ -75,10 +78,10 @@ public class MainActivity extends FragmentActivity {
 
     private ArrayList<Fragment> loadFragment(){
         ArrayList<Fragment> mListAdapter = new ArrayList<>();
+        mListAdapter.add(new HomeFragment());
         mListAdapter.add(new NotasRecientesFragment());
         mListAdapter.add(new NuevaNotaFragment());
         mListAdapter.add(new NotasFragment());
-        mListAdapter.add(new MiFragment());
         return mListAdapter;
     }
 
